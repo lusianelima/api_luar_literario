@@ -64,11 +64,13 @@ Nota: O esquema SQL para criação das tabelas (Livro, Estoque, Venda, Compra, C
 ### 2. Instalar Dependências
 Instale as dependências necessárias listadas em requirements.txt:
 
-bash
+```bash
 pip install -r requirements.txt
+```
 
 ### 3. Iniciar o Servidor
-Bash
-
+```bash
 uvicorn main:app --reload
+```
+
 A API estará disponível em http://127.0.0.1:8000/. Acesse http://127.0.0.1:8000/docs para a documentação interativa (Swagger UI).
