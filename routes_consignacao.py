@@ -28,7 +28,7 @@ def registrar_consignacao(dados: ConsignacaoModel):
             """, (titulo, autor, preco_venda))
             cod_livro = cursor.lastrowid
         else:
-            cod_livro = livro[0]
+            cod_livro = livro['cod_livro']
 
         # Atualiza ou insere no estoque
         cursor.execute("SELECT cod_livro FROM Estoque WHERE cod_livro = %s;", (cod_livro,))

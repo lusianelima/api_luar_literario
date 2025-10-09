@@ -37,7 +37,7 @@ def registrar_compra(dados: CompraModel):
         id_compra = cursor.lastrowid
 
         cursor.execute("""
-            INSERT INTO Compra_Livro (cod_compra, cod_livro, quantidade, valor_unitario)
+            INSERT INTO Compra_Livro (idCompra, cod_livro, quantidade, valor_unitario)
             VALUES (%s, %s, %s, %s);
         """, (id_compra, cod_livro, quantidade, preco_unit))
 
