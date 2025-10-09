@@ -6,8 +6,8 @@ Este projeto implementa uma API de backend para um sistema de livraria (Luar Lit
 
 O objetivo central é garantir que operações complexas de leitura e escrita sejam **atômicas** e **isoladas**.
 
-* [cite_start]**Atomicidade (ACID):** Garantir que uma sequência de operações (como a baixa de estoque e o registro da venda) seja tratada como uma única unidade lógica: ou todas são concluídas com sucesso (`COMMIT`), ou nenhuma delas é aplicada (`ROLLBACK`)[cite: 12].
-* [cite_start]**Controle de Concorrência:** Evitar **condições de corrida** (race conditions) onde múltiplos usuários tentam comprar o mesmo item simultaneamente, o que poderia levar a um estoque negativo ou inconsistente[cite: 22].
+* **Atomicidade (ACID):** Garantir que uma sequência de operações (como a baixa de estoque e o registro da venda) seja tratada como uma única unidade lógica: ou todas são concluídas com sucesso (`COMMIT`), ou nenhuma delas é aplicada (`ROLLBACK`)[cite: 12].
+* **Controle de Concorrência:** Evitar **condições de corrida** (race conditions) onde múltiplos usuários tentam comprar o mesmo item simultaneamente, o que poderia levar a um estoque negativo ou inconsistente[cite: 22].
 
 ## ⚙️ Arquitetura e Tecnologias
 
