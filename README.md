@@ -57,6 +57,7 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=sua_senha
 DB_NAME=luar_literario_db
+```
 
 Nota: O esquema SQL para criação das tabelas (Livro, Estoque, Venda, Compra, Consignacao, Venda_Livro, Compra_Livro) deve ser executado no seu banco de dados MySQL antes de iniciar a API.
 
@@ -66,7 +67,7 @@ Instale as dependências necessárias listadas em requirements.txt:
 bash
 pip install -r requirements.txt
 
-3. Iniciar o Servidor
+### 3. Iniciar o Servidor
 Bash
 
 uvicorn main:app --reload
