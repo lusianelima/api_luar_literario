@@ -21,10 +21,6 @@ class ConsignacaoModel(BaseModel):
     preco_venda: float
     cpf_cliente: str
 
-# ---------- CANCELAMENTO ----------
-class CancelamentoModel(BaseModel):
-    id_venda: int
-
 # ---------- AJUSTE DE ESTOQUE ----------
 class AjusteEstoqueModel(BaseModel):
     cod_livro: int

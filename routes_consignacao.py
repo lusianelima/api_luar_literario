@@ -21,6 +21,7 @@ def registrar_consignacao(dados: ConsignacaoModel):
         cursor.execute("SELECT cod_livro FROM Livro WHERE titulo = %s FOR UPDATE;", (titulo,))
         livro = cursor.fetchone()
 
+        # Se não existir, insere o livro
         if not livro:
             cursor.execute("""
                 INSERT INTO Livro (titulo, autor, preco_venda)
@@ -46,7 +47,7 @@ def registrar_consignacao(dados: ConsignacaoModel):
 
         # Registra consignação
         cursor.execute("""
-            INSERT INTO Consignacao (cpf_cliente, cod_livro, data_consignacao)
+            INSERT INTO Consignacao (cpf_cliente, cod_livro, data_entrada)
             VALUES (%s, %s, NOW());
         """, (cpf_cliente, cod_livro))
 

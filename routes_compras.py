@@ -17,7 +17,7 @@ def registrar_compra(dados: CompraModel):
         cursor.execute("START TRANSACTION;")
 
         # Confere se o livro existe
-        cursor.execute("SELECT cod_livro FROM Livro WHERE cod_livro = %s FOR UPDATE;", (cod_livro,))
+        cursor.execute("SELECT cod_livro FROM Estoque WHERE cod_livro = %s FOR UPDATE;", (cod_livro,))
         if not cursor.fetchone():
             conn.rollback()
             raise HTTPException(status_code=404, detail="Livro não encontrado.")
