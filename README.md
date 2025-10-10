@@ -26,7 +26,7 @@ O principal desafio está na rota de **Venda (`/venda`)**, onde o estoque deve s
     SELECT quantidade FROM Estoque WHERE cod_livro = %s FOR UPDATE;
     ```
     * **Efeito:** Se dois clientes tentarem comprar o mesmo livro ao mesmo tempo, o primeiro adquire um bloqueio exclusivo na linha do estoque. O segundo cliente é **bloqueado** (colocado em espera) nessa mesma linha.
-3.  **Verificação e Atualização:** Somente após o primeiro cliente liberar o bloqueio (via `COMMIT` ou `ROLLBACK`), o segundo cliente prossegue. [cite_start]Neste momento, o segundo cliente lerá a quantidade de estoque já atualizada pelo primeiro, evitando que o estoque fique negativo.
+3.  **Verificação e Atualização:** Somente após o primeiro cliente liberar o bloqueio (via `COMMIT` ou `ROLLBACK`), o segundo cliente prossegue. Neste momento, o segundo cliente lerá a quantidade de estoque já atualizada pelo primeiro, evitando que o estoque fique negativo.
 4.  **Finalização:** Em caso de sucesso, `conn.commit()` é chamado. Em falha (ex: estoque insuficiente, erro no registro de venda), `conn.rollback()` garante que o estoque não seja alterado.
 
 Essa lógica é replicada em rotas críticas como **Compra**, **Consignação**, e **Ajuste de Estoque**.
